@@ -1,5 +1,6 @@
 language: java
 
+
 jdk:
    - openjdk7
    - oraclejdk7
@@ -19,9 +20,10 @@ before_script:
    - update-alternatives --set java $java_path
    - java -version
 
-after_success:
+after_success
    - mvn clean cobertura:cobertura
    - mvn test
+
 archive: true
 
 
