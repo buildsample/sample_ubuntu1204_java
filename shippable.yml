@@ -10,6 +10,7 @@ jdk:
 build_image: shippableimages/ubuntu1204_java
 
 before_install:
+   - apt-get update
    - apt-get install -y maven
    
 before_script:
@@ -20,7 +21,7 @@ before_script:
    - update-alternatives --set java $java_path
    - java -version
 
-after_success
+after_success:
    - mvn clean cobertura:cobertura
    - mvn test
 
