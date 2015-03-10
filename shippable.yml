@@ -7,11 +7,11 @@ jdk:
    - openjdk6
    - oraclejdk8
 
-build_image: shippableimages/ubuntu1204_java:0.0.2
+#build_image: shippableimages/ubuntu1204_java:0.0.2
 
 before_install:
-   - sudo apt-get update
-   - sudo apt-get install -y maven
+   - apt-get update
+   - apt-get install -y maven
    
 before_script:
    - if [[ $SHIPPABLE_JDK_VERSION == "openjdk7" ]] ; then export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"; export PATH="$PATH:/usr/lib/jvm/java-7-openjdk-amd64/bin"; export java_path="/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java"; fi
